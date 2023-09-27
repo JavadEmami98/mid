@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.login_code {
+  height: 60px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.chekbox {
+  width: 20px;
+  height: 20px;
+}
+
+.mana_pic {
+  height: 112px !important;
+  width: 100px !important;
+  object-fit: cover !important;
+}
+
+.aks2 {
+  height: 24px;
+  width: 24px;
+  object-fit: cover;
+  margin-right: 2px;
+}
+
+.aks-any {
+  height: 24px;
+  width: 24px;
+  object-fit: cover;
+  margin-right: 5px;
+}
+
+.logo {
+  height: 60px;
+  width: 66px;
+  object-fit: cover;
+  margin-right: 5px;
+  margin-top: 13px;
+}
