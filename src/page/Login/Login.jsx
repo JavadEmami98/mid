@@ -63,17 +63,8 @@ function Login() {
               سامانه مودیان مــانــا
             </Typography>
             <Box sx={{ display: "flex", mt: "15px" }}>
-              <img
-                src="assest/images/login/anydesk.png"
-                alt=""
-                className="aks-any"
-              />
-              <img
-                src="assest/images/login/telegram.png"
-                alt=""
-                className="aks2"
-              />
-
+            <Box component="img" src="assest/images/login/anydesk.png" sx={{height:"24px",width:"24px",objectFit:"cover",mr:"2px"}}></Box>
+              <Box component="img" src="assest/images/login/telegram.png" sx={{height:"24px",width:"24px",objectFit:"cover",mr:"5px"}}></Box>
               <Typography sx={{ fontSize: "17px" }}>:پشتیبانی</Typography>
             </Box>
             <Typography sx={{ fontSize: "17px", color: "#20a8d8" }}>
@@ -105,7 +96,7 @@ function Login() {
               <Typography
                 sx={{ color: "#fff", fontSize: "1.3125rem", mb: "6.5px" }}
               >
-                {" "}
+               
                 خوش آمدید
               </Typography>
               <TextField
@@ -113,7 +104,7 @@ function Login() {
                 label="نام کاربری/کد ملی"
                 variant="outlined"
                 sx={{
-                  height: "36px !important",
+                  height:"30px",
                   width: "100%",
                   borderRadius: "4px",
                   mb: "30px",
