@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: IRANSansfa;
   font-style: normal;
@@ -82,24 +86,15 @@
 
 * {
   font-family: IRANSansfa !important;
-
-  
 }
 
 body {
- 
   font-family: IRANSansfa;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.login_code {
-  height: 60px;
-  width: 100%;
-  object-fit: cover;
 }
 
 .chekbox {
@@ -127,10 +122,10 @@ code {
   margin-right: 5px;
 }
 
-.logo {
-  height: 60px;
-  width: 66px;
-  object-fit: cover;
-  margin-right: 5px;
-  margin-top: 13px;
+@layer components {
+  .container {
+    max-width: 857px;
+    margin-inline: auto;
+    /*   padding-inline: 10px; */
+  }
 }

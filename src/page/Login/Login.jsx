@@ -9,6 +9,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import CachedIcon from "@mui/icons-material/Cached";
 import CardMembershipIcon from "@mui/icons-material/CardMembership";
 import SecurityIcon from "@mui/icons-material/Security";
+import Tooltip from "@mui/material/Tooltip";
 import InputIcon from "@mui/icons-material/Input";
 import LaptopIcon from "@mui/icons-material/Laptop";
 import React from "react";
@@ -41,47 +42,11 @@ function Login() {
             boxShadow:
               "0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)",
             borderRadius: "4px",
+            overflow: "hidden",
           }}
         >
-          {/* liste sefid */}
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              px: "15px",
-              minWidth: "300px",
-            }}
-          >
-            <img
-              src="assest/images/login/mana.png"
-              alt=""
-              className="mana_pic"
-            />
-            <Typography sx={{ mt: "15px", fontSize: "17px" }}>
-              سامانه مودیان مــانــا
-            </Typography>
-            <Box sx={{ display: "flex", mt: "15px" }}>
-            <Box component="img" src="assest/images/login/anydesk.png" sx={{height:"24px",width:"24px",objectFit:"cover",mr:"2px"}}></Box>
-              <Box component="img" src="assest/images/login/telegram.png" sx={{height:"24px",width:"24px",objectFit:"cover",mr:"5px"}}></Box>
-              <Typography sx={{ fontSize: "17px" }}>:پشتیبانی</Typography>
-            </Box>
-            <Typography sx={{ fontSize: "17px", color: "#20a8d8" }}>
-              0910 810 10 67
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <img src="assest/images/login/logo.png" alt="" className="logo" />
-            </Box>
-          </Box>
           {/* Form */}
-          <Box sx={{ px: "15px", height: "100%" }}>
+          <Box sx={{ height: "100%" }}>
             <Box
               sx={{
                 display: "flex",
@@ -91,12 +56,12 @@ function Login() {
                 padding: "16px",
                 paddingBottom: "24px",
                 height: "100%",
+                overflow: "hidden",
               }}
             >
               <Typography
                 sx={{ color: "#fff", fontSize: "1.3125rem", mb: "6.5px" }}
               >
-               
                 خوش آمدید
               </Typography>
               <TextField
@@ -104,26 +69,26 @@ function Login() {
                 label="نام کاربری/کد ملی"
                 variant="outlined"
                 sx={{
-                  height:"30px",
+                  height: "1.875rem",
                   width: "100%",
                   borderRadius: "4px",
                   mb: "30px",
                   padding: "10px 5px",
                   background: "transparent",
-                  fontSize: "14px",
+                  fontSize: "0.875rem",
                   color: "#ffffffde",
                   borderColor: "red !important",
                 }}
               />
               <FormControl
                 sx={{
-                  height: "36px !important",
+                  height: "1.875rem",
                   width: "100%",
                   borderRadius: "4px",
                   mb: "30px",
                   padding: "10px 5px",
                   background: "transparent",
-                  fontSize: "14px",
+                  fontSize: "0.875rem",
                   color: "#ffffffde",
                   borderColor: "#ffffffde",
                 }}
@@ -155,13 +120,13 @@ function Login() {
                 label="تصویر امنیتی"
                 variant="outlined"
                 sx={{
-                  height: "36px !important",
+                  height: "1.875rem",
                   width: "100%",
                   borderRadius: "4px",
                   mb: "30px",
                   padding: "10px 5px",
                   background: "transparent",
-                  fontSize: "14px",
+                  fontSize: "0.875rem",
                   color: "#ffffffde",
                   borderColor: "#ffffffde",
                 }}
@@ -169,12 +134,18 @@ function Login() {
               <Box
                 sx={{
                   display: "flex",
-                  height: "60px",
+                  height: "3.75rem",
                   border: "1px solid #b9b9b9",
                   borderRadius: "4px",
                   width: "100%",
                 }}
               >
+                {" "}
+                <Box
+                  component="img"
+                  src="assest/images/login/login_code.png"
+                  sx={{ height: "3.75rem", width: "100%", objectFit: "cover" }}
+                ></Box>
                 <Box
                   sx={{
                     display: "flex",
@@ -186,11 +157,6 @@ function Login() {
                 >
                   <CachedIcon sx={{ color: "#03a9f4" }} />
                 </Box>
-                <img
-                  src="assest/images/login/login_code.png"
-                  alt=""
-                  className="login_code"
-                />
               </Box>
               <Box
                 sx={{
@@ -204,26 +170,10 @@ function Login() {
                 <Box
                   sx={{
                     display: "flex",
-                    cursor: "pointer",
-                    ":hover": {
-                      background: "#2196f31c",
-                    },
-                    alignItems: "center",
-                    color: "#2196f3",
-                    fontSize: "11px",
-                    padding: "6px 8px",
-                  }}
-                >
-                  <Typography> ارسال/فراموشی رمز عبور </Typography>
-                  <SecurityIcon sx={{ padding: "5px !important" }} />
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
                     alignItems: "center",
                     cursor: "pointer",
                     color: "#2196f3",
-                    fontSize: "11px",
+                    fontSize: "0.6875rem",
                     padding: "6px 8px",
                     borderRadius: "4px",
                     ":hover": {
@@ -231,40 +181,142 @@ function Login() {
                     },
                   }}
                 >
-                  <Typography>ثبت نام مودی</Typography>
-                  <CardMembershipIcon sx={{ padding: "5px !important" }} />
+                  <CardMembershipIcon
+                    sx={{ width: "18.5px", height: "18.5px" }}
+                  />
+                  <Typography sx={{ fontSize: "0.6875rem" }}>
+                    ثبت نام مودی
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    cursor: "pointer",
+                    ":hover": {
+                      background: "#2196f31c",
+                    },
+                    alignItems: "center",
+                    color: "#2196f3",
+                    fontSize: "0.6875rem",
+                    padding: "6px 8px",
+                  }}
+                >
+                  <SecurityIcon sx={{ width: "18.5px", height: "18.5px" }} />
+                  <Typography sx={{ fontSize: "0.6875rem" }}>
+                    {" "}
+                    ارسال/فراموشی رمز عبور{" "}
+                  </Typography>
                 </Box>
               </Box>
               <Box sx={{ px: "15px", my: "3.25px", width: "100%" }}>
                 <Button
                   variant="contained"
                   sx={{
-                    height: "31px",
-                    fontSize: "11px",
+                    height: "1.9375rem",
+                    fontSize: "0.6875rem",
                     width: "100%",
                     background: "#2196f3",
                   }}
                 >
-                  <LaptopIcon />
-                  <Typography sx={{ mx: "3.25px" }}>ورود</Typography>
                   <InputIcon />
+                  <Typography sx={{ mx: "3.25px" }}>ورود</Typography>
+                  <LaptopIcon />
                 </Button>
               </Box>
               <Box
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "flex-end",
                   px: "15px",
                   my: "3.25px",
                   width: "100%",
                 }}
               >
-                <Typography sx={{ fontSize: "11px", px: "7px" }}>
+                <input type="checkbox" name="" id="" className="chekbox" />
+                <Typography sx={{ fontSize: "0.6875rem", px: "7px" }}>
                   Remember
                 </Typography>
-                <input type="checkbox" name="" id="" className="chekbox" />
               </Box>
+            </Box>
+          </Box>
+          {/* liste sefid */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              px: "15px",
+              minWidth: "300px",
+            }}
+          >
+            <Tooltip title="سامانه مودیان مــانــا ">
+              <Box
+                component="img"
+                src="assest/images/login/mana.png"
+                sx={{
+                  height: "7rem",
+                  objectFit: "cover",
+                  width: "6.25rem",
+                  cursor: "pointer",
+                }}
+              ></Box>
+            </Tooltip>
+            <Typography sx={{ mt: "15px", fontSize: "1.0625rem" }}>
+              سامانه مودیان مــانــا
+            </Typography>
+            <Box sx={{ display: "flex", mt: "15px" }}>
+              <Typography sx={{ fontSize: "1.0625rem" }}>پشتیبانی: </Typography>
+              <Box
+                component="img"
+                src="assest/images/login/telegram.png"
+                sx={{
+                  height: "1.5rem",
+                  width: "24px",
+                  objectFit: "cover",
+                  mr: "5px",
+                }}
+              ></Box>
+              <Box
+                component="img"
+                src="assest/images/login/anydesk.png"
+                sx={{
+                  height: "1.5rem",
+                  width: "24px",
+                  objectFit: "cover",
+                  mr: "2px",
+                }}
+              ></Box>
+            </Box>
+            <Typography
+              sx={{
+                fontSize: "1.0625rem",
+                color: "#20a8d8",
+                cursor: "pointer",
+                fontWeight: "bold",
+                ":hover": { color: "#2a8aac" },
+              }}
+            >
+              0910 810 10 67
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Tooltip title="ارسال صورتحساب به سامانه مودیان اداره دارایی">
+                <Box
+                  component="img"
+                  src="assest/images/login/logo.png"
+                  sx={{
+                    mt: "13px",
+                    mr: "5px",
+                    height: { lg: "60px", md: "60px", sm: "32px", xs: "32px" },
+                  }}
+                ></Box>
+              </Tooltip>
             </Box>
           </Box>
         </Box>
